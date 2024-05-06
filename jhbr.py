@@ -60,7 +60,7 @@ def grover_search(allmoves, good, bad):
 
     t2 = time.time()
     if DEBUG == True:
-        with open("/Users/ei/Downloads/jhbr.log", "a") as f:
+        with open("jhbr.log", "a") as f:
             f.write(f"allmoves = {len(allmoves)} good = {str(good)} bestmove = {bestmove} time = {t2-t1}\n")
 
     return bestmove
@@ -190,10 +190,8 @@ class JHBR:
             elif cmd[0] == 'position':
 
                 if DEBUG == True:
-                    with open("/Users/ei/Downloads/jhbr2.log", "a") as f:
+                    with open("jhbr2.log", "a") as f:
                         f.write(str(cmd) + "\n")
-
-
                 
                 args = cmd[1].split('moves')
                 self.position(args[0].strip(), args[1].split() if len(args) > 1 else [])
